@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>最简单的订阅与发布</title>
+    <!-- 引用MQTT的CDN -->
+    <script src="js/paho-mqtt.js" type="text/javascript"></script>
+	    <!-- 相关业务代码 -->
+    <script src="js/pahoTest02.js"></script>
+</head>
+<style>
+body{
+	margin: 0px; 
+	padding: 0px;
+}
+.saydiv{
+	padding:30px 30px 30px 30px;
+}
+.bigbt{
+    width: 100%;
+	align:center;
+	padding-top:100px;
+}
+.bt01,.bt02{
+	display:none;
+	font-family: "'微软雅黑','Helvetica Neue',Helvetica,Arial,sans-serif";
+	font-size: 13px!important;
+	line-height: 18px!important;
+	padding: 10px 60px;
+	/*display: inline-block;*/
+	vertical-align: middle;
+	font-weight: normal;
+	border-radius: 0px;
+	margin: 0 8px 0 3px;
+	border: 0px solid #3383da;
+	color: #ffffff;
+	background-color: #3383da;
+	cursor: pointer;
+}
+</style>
+<body>
+	<div class="saydiv">
+	说明：最简单的订阅与发布，完成就一直保持和服务器链接 只要onMessageArrived(message)不运行client.disconnect()；
+	注意Apollo 后台一定要选项Connector:WS
+	</div>
+	<div class="bigbt">
+		<div align="center">
+			打开浏览器就开始运行，按F12查看结果
+			<button type="button" class="bt01" onclick='publish("NO");' onmouseover="this.style.backgroundColor='#ff0000';" onmouseout="this.style.backgroundColor='';">测试按键01</button>
+			<button type="button" class="bt02" onclick='publish("OFF");' onmouseover="this.style.backgroundColor='#ff0000';" onmouseout="this.style.backgroundColor='';">测试按键02</button>
+		</div>
+	</div> 
+</body>
+ 
+</html>

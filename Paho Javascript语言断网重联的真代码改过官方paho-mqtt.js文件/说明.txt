@@ -1,0 +1,18 @@
+断网重联真正代码paho-mqtt.js有所改动。官方设定了128次具每一次*2即就停重连，改成了这样
+//if (this._reconnectInterval < 128)
+
+this._reconnectInterval = this._reconnectInterval + 1;
+
+
+还有把pahoTest05.js的timeout: 1，keepAliveInterval: 1这样更快速重连，它为网络来定，保定可连准确性
+
+var options = {
+    invocationContext: { host: hostname, port: port, path: path, clientId: clientId }, //它的做用只是收积参数传到onConnect那边去
+    timeout: 1,
+    keepAliveInterval: 1,
+    //cleanSession: true,
+    //useSSL: true,
+    reconnect: true, //打开断开重连
+    onSuccess: onConnect,
+    //mqttVersion: 4
+};
